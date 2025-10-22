@@ -1,13 +1,10 @@
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #222;
-  color: white;
-  font-family: sans-serif;
-  height: 100vh;
-  display: flex;
+  background-image: url('background7.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   justify-content: center;
-  align-items: center;
 }
 
 .game {
@@ -66,10 +63,13 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: black;
+  border-radius: 8px; 
 }
 
 .board-row {
   display: flex;
+  gap: 12px;
+  margin-bottom: 12px; 
 }
 
 .move-list {
@@ -111,13 +111,13 @@ body {
 }
 
 .player-x {
-  color: #00bcd4; 
+  color: #9acd32; 
   font-size: 24px;
   font-weight: bold;
 }
 
 .player-o {
-  color: #fbc02d; 
+  color: #2196f3; 
   font-size: 24px;
   font-weight: bold;
 }
@@ -142,4 +142,26 @@ body {
 
 .restart-icon:hover {
   background-color: #aaa;
+}
+
+.turn-indicator {
+  background-color: #333;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.turn-player {
+  font-size: 24px;
+  color: white;
+}
+
+.turn-label {
+  font-size: 14px;
+  color: #aaa;
 }

@@ -70,8 +70,18 @@ export default function Game() {
           <span className="player-o">O</span>
         </div>
         <div className="turn-indicator">
-          {winner ? `Winner: ${winner}` : isBoardFull ? "It's a tie!" : `${xIsNext ? 'X' : 'O'} TURN`}
-        </div>
+            {winner ? (
+                `Winner: ${winner}`
+            ) : isBoardFull ? (
+                "It's a tie!"
+            ) : (
+                <>
+                <span className="turn-player">{xIsNext ? 'X' : 'O'}</span>
+                <span className="turn-label"> TURN</span>
+                </>
+            )}
+            </div>
+
         <button className="restart-icon" onClick={handleReset} title="Restart Game">
           🔄
         </button>
