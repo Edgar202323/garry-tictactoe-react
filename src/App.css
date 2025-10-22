@@ -1,13 +1,10 @@
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #222;
-  color: white;
-  font-family: sans-serif;
-  height: 100vh;
-  display: flex;
+  background-image: url('background7.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   justify-content: center;
-  align-items: center;
 }
 
 .game {
