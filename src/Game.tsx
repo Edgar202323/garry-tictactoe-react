@@ -19,18 +19,32 @@ export default function Game() {
     setCurrentMove(nextMove);
   }
 
-  const moves = history.map((squares, move) => {
-    const description = move > 0 ? `Go to move #${move}` : 'Go to game start';
-    return (
-      <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
-      </li>
-    );
-  });
+  function handleReset() {
+    setHistory([Array(9).fill(null)]);
+    setCurrentMove(0);
+  }
+
+  const moves = history
+    .map((squares, move) => {
+      if (move === 0) return null;
+      return (
+        <li key={move}>
+          {move === currentMove ? (
+            <span>You are at move #{move}</span>
+          ) : (
+            <button onClick={() => jumpTo(move)}>Go to move #{move}</button>
+          )}
+        </li>
+      );
+    })
+    .filter(Boolean);
 
   return (
     <div className="game">
       <div className="game-board">
+        <button className="icon-button" onClick={handleReset} title="Restart Game">
+          🔄
+        </button>
         <Board
           xIsNext={xIsNext}
           squares={currentSquares}
@@ -38,7 +52,7 @@ export default function Game() {
         />
       </div>
       <div className="game-info">
-        <ol>{moves}</ol>
+        <ol className="move-list">{moves}</ol>
       </div>
     </div>
   );
